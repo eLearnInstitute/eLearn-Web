@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% block body %}
+<title>{% block title%}eLearn Institution &mdash; Courses {% endblock title %} </title>	
+	<body>	
+	<div id="fh5co-course">	
+		<div class="container">
+			<div class="row">
+			{% for crse in crses %}				
+				<div class="col-md-6 animate-box">
+					<div class="course">					
+						<a href="#" class="course-img" style="background-image: url({{crse.img.url}});"></a>
+						<div class="desc">
+							<h3><a href="#">{{crse.name}}</a></h3>
+							<p>{{crse.desc}}</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Enroll Course</a></span>
+						</div>						
+					</div>
+				</div>
+			{% endfor %}				
+			</div>		
+		</div>
+	</div>		
+{% endblock %}
